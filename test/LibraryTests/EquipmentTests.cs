@@ -15,9 +15,9 @@ namespace LibraryTests
         {
             string description = "Test Equipment";
             double hourlyCost = 9.99;
-            string expected = $@"{{""Description"":""{description}"",""HourlyCost"":{hourlyCost}}}";
+            string expected = $@"{{""Description"":""{description}"",""HourlyCost"":9.99}}";
 
-            IJsonConvertible equipment = new Equipment(description, hourlyCost);
+            Equipment equipment = new Equipment(description, hourlyCost);
             string actual = equipment.ConvertToJson();
 
             Assert.AreEqual(expected, actual);
@@ -28,7 +28,7 @@ namespace LibraryTests
         {
             string description = "Test Equipment";
             double hourlyCost = 9.99;
-            string json = $@"{{""Description"":""{description}"",""HourlyCost"":{hourlyCost}}}";
+            string json = $@"{{""Description"":""{description}"",""HourlyCost"":9.99}}";
 
             Equipment equipment = new Equipment(json);
 
